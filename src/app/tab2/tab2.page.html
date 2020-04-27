@@ -1,0 +1,48 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar class=head>
+    <ion-title class=head>
+      FirstHybridApp
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div *ngFor="let product of products">
+    <h3>
+      <a [title]="product.name + ' details'">
+        {{product.name}}
+      </a>
+    </h3>
+  
+    <p *ngIf="product.description">
+      Description:{{product.description}}
+    </p>
+  
+    <ion-button  expand="block" (click)="change()">
+      Share
+    </ion-button>
+
+    <app-product-alerts 
+      [product]="product"
+     (notify)="onNotify()">
+    </app-product-alerts>
+
+    
+    
+  </div>  
+  <ion-button id="Domt" expand="block" (click)="change()">
+    Share
+  </ion-button>
+  <p id="DOMT"></p>
+  
+</ion-content>
+
+
+
+
